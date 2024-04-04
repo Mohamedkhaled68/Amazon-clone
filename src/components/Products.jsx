@@ -4,7 +4,7 @@ import ProductCard from "./ProductCard";
 const Products = () => {
     return (
         <>
-            <div className="grid grid-cols-4 mt-[-19rem]">
+            <div className="grid grid-cols-4 m-3  mt-[-9rem]">
                 <ProductCard
                     title={"Amazon Basics"}
                     imgSrc={"./images/home_grid_1.jpg"}

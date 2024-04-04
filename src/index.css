@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.swiper-button-prev,
-.swiper-button-next {
-    top: 150px;
+* {
+    user-select: none;
 }

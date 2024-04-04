@@ -45,7 +45,7 @@ const Header = () => {
                     </div>
                     <div className="flex gap-2 items-end">
                         <div className="relative">
-                            <span className="absolute top-[-15px] right-2">
+                            <span className="absolute top-[-15px] right-2 text-amazonYellow font-semibold">
                                 0
                             </span>
                             <FiShoppingCart size={30} />

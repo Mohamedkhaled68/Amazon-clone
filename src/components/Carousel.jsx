@@ -7,9 +7,8 @@ import "swiper/css/navigation";
 const Carousel = () => {
     return (
         <>
-            <div className="h-[600px] user-select-none relative">
+            <div className="h-[500px] user-select-none relative">
                 <Swiper
-                    className=""
                     autoplay={{ delay: 4500 }}
                     loop={true}
                     spaceBetween={0}
@@ -26,7 +25,7 @@ const Carousel = () => {
                         <img src="./images/carousel_3.jpg" />
                     </SwiperSlide>
                 </Swiper>
-                <div className="absolute z-20 h-[50%] w-full bg-gradient-to-t from-slate-300 bottom-0" />
+                <div className="absolute bottom-[-2.2rem] z-20 h-[50%] w-full bg-gradient-to-t from-slate-300" />
             </div>
         </>
     );

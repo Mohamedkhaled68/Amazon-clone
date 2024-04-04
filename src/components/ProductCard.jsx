@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const ProductCard = ({ title, imgSrc, link }) => {
     return (
@@ -12,9 +11,9 @@ const ProductCard = ({ title, imgSrc, link }) => {
                     <img className="h-full w-full object-cover" src={imgSrc} />
                 </div>
                 <div>
-                    <Link className="text-blue-700 text-sm ml-3 mt-3 ">
+                    <div className="text-blue-700 text-sm ml-3 mt-3 ">
                         {link}
-                    </Link>
+                    </div>
                 </div>
             </div>
         </>
