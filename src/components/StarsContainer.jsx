@@ -1,0 +1,16 @@
+import React from "react";
+import { FaStar } from "react-icons/fa";
+
+const StarsContainer = ({ stars }) => {
+    return (
+        <>
+            <div className="flex items-center gap-1">
+                {Array.from({ length: 5 }, (_, i) => {
+                    return <FaStar key={i} color="gold" size={19} />;
+                })}
+            </div>
+        </>
+    );
+};
+
+export default StarsContainer;

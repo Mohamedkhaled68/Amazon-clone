@@ -11,7 +11,7 @@ const Header = () => {
             <div className="header px-4 py-1 bg-slate-950 flex justify-between items-center gap-10 text-white">
                 {/* left */}
                 <div className="flex items-center gap-4">
-                    <Link>
+                    <Link to={"/"}>
                         <img
                             className="w-[100px] h-[35px] mt-4"
                             src="./images/amazon.png"
@@ -53,6 +53,13 @@ const Header = () => {
                         <div className="text-base font-bold">basket</div>
                     </div>
                 </div>
+            </div>
+            <div className="flex gap-3 items-center px-4 py-2 text-white text-sm bg-amazonLight_blue">
+                <div>Today's Deals</div>
+                <div>Customer Service</div>
+                <div>Registry</div>
+                <div>Sell</div>
+                <div>Gift Cards</div>
             </div>
         </>
     );
