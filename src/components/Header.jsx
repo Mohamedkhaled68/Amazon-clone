@@ -13,8 +13,8 @@ const Header = () => {
                 <div className="flex items-center gap-4">
                     <Link to={"/"}>
                         <img
-                            className="w-[100px] h-[35px] mt-4"
-                            src="./images/amazon.png"
+                            className="w-[100px] h-[35px] mt-4 object-fit"
+                            src="../images/amazon.png"
                             alt="header-logo"
                         />
                     </Link>

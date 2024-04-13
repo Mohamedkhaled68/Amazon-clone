@@ -32,7 +32,7 @@ const ProductPage = () => {
                                 </span>
                             </p>
                             <div className="flex gap-2">
-                                <StarsContainer />
+                                <StarsContainer stars={product.avgRating} />
                                 <div className="text-blue-500">
                                     {product.ratings} ratings
                                 </div>
