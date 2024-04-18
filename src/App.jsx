@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import HomePage from "./components/HomePage";
 import ProductPage from "./components/ProductPage";
 import SearchResults from "./components/SearchResults";
+import Checkout from "./components/Checkout";
 
 const App = () => {
     return (
@@ -13,6 +14,8 @@ const App = () => {
                 <Route path="/" element={<HomePage />} />
                 <Route path="/product/:id" element={<ProductPage />} />
                 <Route path="/search" element={<SearchResults />} />
+                <Route path="/checkout" element={<Checkout />} />
+
                 <Route path="*" element={<h1>Page not Found</h1>} />
             </Routes>
         </>

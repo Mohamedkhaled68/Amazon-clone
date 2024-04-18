@@ -4,8 +4,10 @@ import { CiLocationOn } from "react-icons/ci";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { FiShoppingCart } from "react-icons/fi";
 import Search from "./Search";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+    const cart = useSelector((state) => state.cart.productsNumber);
     return (
         <>
             <div className="header px-4 py-1 bg-slate-950 flex justify-between items-center gap-10 text-white">
@@ -43,15 +45,15 @@ const Header = () => {
                         <div className="text-xs ">Returns</div>
                         <div className="text-sm font-bold">& Orders</div>
                     </div>
-                    <div className="flex gap-2 items-end">
+                    <Link to={"/checkout"} className="flex gap-2 items-end">
                         <div className="relative">
                             <span className="absolute top-[-15px] right-2 text-amazonYellow font-semibold">
-                                0
+                                {cart}
                             </span>
                             <FiShoppingCart size={30} />
                         </div>
                         <div className="text-base font-bold">basket</div>
-                    </div>
+                    </Link>
                 </div>
             </div>
             <div className="flex gap-3 items-center px-4 py-2 text-white text-sm bg-amazonLight_blue">

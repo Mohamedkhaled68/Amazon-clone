@@ -1,6 +1,5 @@
 import { useSearchParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-// import { ProductDetails } from "./";
 import { getData } from "../utils/callApi";
 import ProductDetails from "./ProductDetails";
 
