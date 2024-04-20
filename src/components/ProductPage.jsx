@@ -1,15 +1,18 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import ProductDetails from "./ProductDetails";
 import { GB_CURRENCY } from "../utils/constants";
 import { getData } from "../utils/callApi";
 import { addToCart } from "../redux/cartSlice";
+import { useAuth } from "../contexts/AuthContext";
 
 const ProductPage = () => {
     const { id } = useParams();
     const [product, setProduct] = useState(null);
     const [quantity, setQuantity] = useState("1");
+    const { currentUser } = useAuth();
+    const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const getProduct = () => {
@@ -84,18 +87,22 @@ const ProductPage = () => {
                                     <option>3</option>
                                 </select>
                             </div>
-                            <Link to={"/checkout"}>
-                                <button
-                                    onClick={() =>
+
+                            <button
+                                onClick={() => {
+                                    if (currentUser) {
                                         dispatch(
                                             addToCart(addQuantityToProduct())
-                                        )
+                                        );
+                                        navigate('/checkout')
+                                    } else {
+                                        navigate("/login");
                                     }
-                                    className="btn"
-                                >
-                                    Add to Cart
-                                </button>
-                            </Link>
+                                }}
+                                className="btn"
+                            >
+                                Add to Cart
+                            </button>
                         </div>
                     </div>
                 </div>

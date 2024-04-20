@@ -12,9 +12,6 @@ import Profile from "./components/Profile";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 const App = () => {
-    useEffect(() => {
-        localStorage.setItem("users",'[]');
-    }, []);
     return (
         <>
             <AuthProvider>

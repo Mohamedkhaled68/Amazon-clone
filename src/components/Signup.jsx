@@ -26,17 +26,36 @@ const Signup = () => {
                 setLoading(true);
                 await signup(inputs.emailOrPhone, inputs.password).then(
                     (user) => {
-                        const id = user.user.uid;
-                        const data = JSON.parse(localStorage.getItem("users"));
-                        const userL = {
-                            username: inputs.username,
-                            uid: id,
-                        };
-                        const usersData = [...data, userL];
-                        localStorage.setItem(
-                            "users",
-                            JSON.stringify(usersData)
-                        );
+                        if (localStorage.getItem("users")) {
+                            const id = user.user.uid;
+                            const data = JSON.parse(
+                                localStorage.getItem("users")
+                            );
+                            const userL = {
+                                username: inputs.username,
+                                uid: id,
+                            };
+                            const usersData = [...data, userL];
+                            localStorage.setItem(
+                                "users",
+                                JSON.stringify(usersData)
+                            );
+                        } else {
+                            localStorage.setItem('users', '[]')
+                            const id = user.user.uid;
+                            const data = JSON.parse(
+                                localStorage.getItem("users")
+                            );
+                            const userL = {
+                                username: inputs.username,
+                                uid: id,
+                            };
+                            const usersData = [...data, userL];
+                            localStorage.setItem(
+                                "users",
+                                JSON.stringify(usersData)
+                            );
+                        }
                     }
                 );
                 navigate("/");
