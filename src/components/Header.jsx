@@ -5,9 +5,18 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import { FiShoppingCart } from "react-icons/fi";
 import Search from "./Search";
 import { useSelector } from "react-redux";
+import { useAuth } from "../contexts/AuthContext";
 
 const Header = () => {
     const cart = useSelector((state) => state.cart.productsNumber);
+    const { currentUser } = useAuth();
+
+    const name = JSON.parse(localStorage.getItem("users"))?.map((user) => {
+        if (currentUser?.uid == user.uid) {
+            return user.username;
+        }
+    });
+
     return (
         <>
             <div className="header px-4 py-1 bg-slate-950 flex justify-between items-center gap-10 text-white">
@@ -35,7 +44,14 @@ const Header = () => {
                 {/* Right */}
                 <div className="flex items-center gap-5">
                     <div>
-                        <div className="text-xs">Hello, sign in</div>
+                        <div className="text-xs">
+                            Hello,{" "}
+                            {currentUser ? (
+                                <Link to={"/profile"}>{name}</Link>
+                            ) : (
+                                <Link to={"/login"}>sign in</Link>
+                            )}
+                        </div>
                         <div className="text-sm font-bold cursor-pointer">
                             Account & Lists{" "}
                             <IoMdArrowDropdown className="inline" />
